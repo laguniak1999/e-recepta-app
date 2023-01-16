@@ -1,0 +1,80 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:jaxws="http://cxf.apache.org/jaxws"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:sec="http://cxf.apache.org/configuration/security"
+       xmlns:http="http://cxf.apache.org/transports/http/configuration"
+       xsi:schemaLocation="
+http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd
+http://cxf.apache.org/configuration/security http://cxf.apache.org/schemas/configuration/security.xsd
+http://cxf.apache.org/transports/http/configuration http://cxf.apache.org/schemas/configuration/http-conf.xsd
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <import resource="classpath:META-INF/cxf/cxf.xml"/>
+
+    <context:property-placeholder location="classpath:cxf.properties"/>
+
+    <jaxws:client id="obslugaReceptyWSClient"
+                  serviceClass="pl.gov.csioz.p1.erecepta.ws.v20170510.ObslugaReceptyWS"
+                  address="https://isus.ezdrowie.gov.pl/services/ObslugaReceptyWS">
+        <jaxws:properties>
+            <entry key="soap.env.ns.map">
+                <map>
+                    <entry key="soapenv" value="http://schemas.xmlsoap.org/soap/envelope/"/>
+                    <entry key="v20" value="http://csioz.gov.pl/p1/erecepta/ws/v20170510"/>
+                    <entry key="v201" value="http://csioz.gov.pl/p1/kontekst/mt/v20170510"/>
+                    <entry key="v202" value="http://csioz.gov.pl/p1/erecepta/mt/v20170510"/>
+                </map>
+            </entry>
+        </jaxws:properties>
+        <jaxws:features>
+            <bean class="org.apache.cxf.ext.logging.LoggingFeature">
+                <property name="prettyLogging" value="true"/>
+            </bean>
+        </jaxws:features>
+        <jaxws:dataBinding>
+            <bean class="org.apache.cxf.jaxb.JAXBDataBinding">
+                <property name="namespaceMap">
+                    <map>
+                        <entry>
+                            <key>
+                                <value>http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd</value>
+                            </key>
+                            <value>wsu</value>
+                        </entry>
+                    </map>
+                </property>
+            </bean>
+        </jaxws:dataBinding>
+        <jaxws:outInterceptors>
+            <bean class="org.apache.cxf.ws.security.wss4j.WSS4JOutInterceptor">
+                <constructor-arg>
+                    <map>
+                        <entry key="action" value="Signature"/>
+                        <entry key="user" value="podmiot_leczniczy_33-uwierzytelnienie danych"/>
+                        <entry key="signaturePropFile" value="clientKeystore.properties"/>
+                        <entry key="passwordCallbackClass" value="pl.dlaguna.nzoz.ereceptaapp.config.ClientKeystorePasswordCallback"/>
+                        <entry key="signatureParts" value="{Element}{http://schemas.xmlsoap.org/soap/envelope/}Body;
+                        {Element}{http://csioz.gov.pl/p1/kontekst/mt/v20170510}kontekstWywolania;"/>
+                        <entry key="signatureKeyIdentifier" value="DirectReference"/>
+                    </map>
+                </constructor-arg>
+            </bean>
+        </jaxws:outInterceptors>
+    </jaxws:client>
+
+    <!--TODO find out whether conduit should being placed in separate XML file?-->
+    <!--TODO why there is required Port suffix while in WSDL and service it is missing?-->
+    <!--    <http:conduit name="https://ws-int-p1.csioz.gov.pl/services/.*">-->
+    <http:conduit name="{http://csioz.gov.pl/p1/erecepta/ws/v20170510}ObslugaReceptyWSPort.http-conduit">
+        <http:tlsClientParameters disableCNCheck="true">
+            <sec:keyManagers keyPassword="fNPkuewa25">
+                <sec:keyStore file="C:\Users\Damian\Desktop\dlaguna-erecepta-java\keys\Podmiot_leczniczy_33-tls.p12"
+                              type="PKCS12"
+                              password="fNPkuewa25"/>
+            </sec:keyManagers>
+        </http:tlsClientParameters>
+    </http:conduit>
+
+</beans>

@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><?xml-stylesheet href="CDA_PL_IG_1.3.2.xsl" type="text/xsl"?><ClinicalDocument xmlns="urn:hl7-org:v3" xmlns:extPL="http://www.csioz.gov.pl/xsd/extPL/r3" xmlns:pharm="urn:ihe:pharm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="extPL:ClinicalDocument">
+    <!-- Anulowanie recepty na Enarenal -->
+	<typeId extension="POCD_HD000040" root="2.16.840.1.113883.1.3"/>
+	<templateId root="1.3.6.1.4.1.19376.1.9.1.1.1"/>
+    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.1"/>
+    <templateId extension="1.3.2" root="2.16.840.1.113883.3.4424.13.10.1.14"/>
+    <id displayable="true" extension="57C22B226961469E94AE84" root="2.16.840.1.113883.3.4424.2.7.57.2.9"/>
+	<code code="51851-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Administrative note">
+	    <translation code="08.80" codeSystem="2.16.840.1.113883.3.4424.11.1.32" codeSystemName="KLAS_DOK_P1" displayName="Dokument anulujący"/>
+	</code>
+	<title>Dokument anulujący</title>
+	<effectiveTime value="20221213203120"/>
+	<confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25"/>
+	<languageCode code="pl-PL"/>
+	<setId extension="741912970922013054495637" root="2.16.840.1.113883.3.4424.2.7.11.2.2"/>
+	<versionNumber value="1"/>
+	<recordTarget>
+        <templateId root="2.16.840.1.113883.3.4424.13.10.2.3"/>
+        <patientRole>
+            <id displayable="false" extension="12345" root="2.16.840.1.113883.3.4424.2.7.0.17.1"/>
+            <id displayable="true" extension="70032816894" root="2.16.840.1.113883.3.4424.1.1.616"/>
+            <addr>
+                <city>Warszawa</city>
+                <postalCode>01-134</postalCode>
+                <streetName>Odkryta</streetName>
+                <houseNumber>41</houseNumber>
+                <unitID>12</unitID>
+            </addr>
+            <patient>
+                <name>
+                    <given>Anna</given>
+                    <family>Kasina</family>
+                </name>
+                <administrativeGenderCode code="M" codeSystem="2.16.840.1.113883.5.1"/>
+                <birthTime value="19700328"/>
+            </patient>
+        </patientRole>
+    </recordTarget>
+    <author>
+        <templateId root="2.16.840.1.113883.3.4424.13.10.2.4"/>
+        <functionCode code="LEK" codeSystem="2.16.840.1.113883.3.4424.11.3.18" displayName="Lekarz"/>
+        <time value="20171012"/>
+        <assignedAuthor>
+            <id displayable="true" extension="5551491" root="2.16.840.1.113883.3.4424.1.6.2"/>
+            <code code="0718" codeSystem="2.16.840.1.113883.3.4424.11.3.3.1" displayName="neurologia"/>
+            <assignedPerson>
+                <templateId root="2.16.840.1.113883.3.4424.13.10.2.1"/>
+
+            </assignedPerson>
+            <representedOrganization>
+                <templateId root="2.16.840.1.113883.3.4424.13.10.2.17"/>
+                <id displayable="true" extension="000000121849-001" root="2.16.840.1.113883.3.4424.2.3.2"/>
+                <name>Poradnia POZ</name>
+                <telecom use="PUB" value="tel:22-1111123"/>
+                <addr>
+                    <postalCode>00-184</postalCode>
+                    <city>Warszawa</city>
+                    <streetName>ul. Dubois</streetName>
+                    <houseNumber>5A</houseNumber>
+                </addr>
+                <asOrganizationPartOf>
+                    <wholeOrganization>
+                        <id displayable="true" extension="19330059000014" root="2.16.840.1.113883.3.4424.2.2.2"/>
+                        <asOrganizationPartOf>
+                            <wholeOrganization>
+                                <id displayable="true" extension="000000121849" root="2.16.840.1.113883.3.4424.2.3.1"/>
+                                <!--<id extension="123456789" root="2.16.840.1.113883.3.4424.2.2.1" displayable="true"/>-->
+                            </wholeOrganization>
+                        </asOrganizationPartOf>
+                    </wholeOrganization>
+                </asOrganizationPartOf>
+            </representedOrganization>
+        </assignedAuthor>
+    </author>
+    <custodian>
+        <templateId root="2.16.840.1.113883.3.4424.13.10.2.5"/>
+        <assignedCustodian>
+            <representedCustodianOrganization>
+                <id assigningAuthorityName="CSIOZ" displayable="false" root="2.16.840.1.113883.3.4424"/>
+            </representedCustodianOrganization>
+        </assignedCustodian>
+    </custodian>
+    <legalAuthenticator>
+        <templateId root="2.16.840.1.113883.3.4424.13.10.2.6"/>
+        <time value="20171012"/>
+        <signatureCode code="S"/>
+        <assignedEntity>
+            <id displayable="false" extension="5551491" root="2.16.840.1.113883.3.4424.1.6.2"/>
+            <code code="LEK" codeSystem="2.16.840.1.113883.3.4424.11.3.18" displayName="Lekarz"/>
+        </assignedEntity>
+    </legalAuthenticator>
+	<participant typeCode="IND">
+        <templateId root="2.16.840.1.113883.3.4424.13.10.2.19"/>
+        <associatedEntity classCode="UNDWRT">
+            <id displayable="true" extension="07" root="2.16.840.1.113883.3.4424.3.1"/>
+        </associatedEntity>
+    </participant>
+	<relatedDocument typeCode="RPLC">
+		<templateId root="2.16.840.1.113883.3.4424.13.10.2.46"/>
+	    <parentDocument>
+		<!-- poniższe @@ to powiązania do recepty ktore dotyczy dokument anulowania @@ -->
+<!--	       <id extension="@@numer_recepty_ext@@" root="@@numer_recepty_root@@" displayable="false"/>-->
+	        <setId extension="741912970922013054495637" root="2.16.840.1.113883.3.4424.2.7.11.2.2"/>
+			<!--&lt;!&ndash; musi być mniejszy od numer wersji dokumentu anulowania &ndash;&gt;-->
+	        <versionNumber value="1"/>--&gt;
+	    </parentDocument>
+	</relatedDocument>
+	<component>
+		<templateId root="2.16.840.1.113883.3.4424.13.10.2.47"/>
+	    <structuredBody>
+	        <component>
+	            <section>
+	            	<templateId root="2.16.840.1.113883.3.4424.13.10.3.27"/>
+					<title>Dane dokumentu anulowanego</title>
+	                <text>
+	                    <paragraph>Proszę o anulowanie dokumentu:</paragraph>
+	                    <paragraph><caption>Tytuł:</caption> Recepta</paragraph>
+	                    <paragraph><caption>Data wystawienia:</caption> 12.10.2017</paragraph>
+	                    <paragraph><caption>Identyfikator:</caption> 2345678</paragraph>
+	                </text>
+	            </section>
+	        </component>
+	    </structuredBody>
+	</component>
+<ds:Signature xmlns:ds="http://www.w3.org/2000/09/xmldsig#" Id="xmldsig-eaf1538c-62ba-4ce6-ab3f-7774f1aea15b">
+<ds:SignedInfo>
+<ds:CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+<ds:SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+<ds:Reference Id="xmldsig-eaf1538c-62ba-4ce6-ab3f-7774f1aea15b-ref0" URI="">
+<ds:Transforms>
+<ds:Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+</ds:Transforms>
+<ds:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+<ds:DigestValue>1vDHk3XNwYsbuTWjcNHPrTpJjd4=</ds:DigestValue>
+</ds:Reference>
+<ds:Reference Type="http://uri.etsi.org/01903#SignedProperties" URI="#xmldsig-eaf1538c-62ba-4ce6-ab3f-7774f1aea15b-signedprops">
+<ds:Transforms>
+<ds:Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+</ds:Transforms>
+<ds:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+<ds:DigestValue>UL6ULdGm6mn6vvr2SQvNCK128to=</ds:DigestValue>
+</ds:Reference>
+</ds:SignedInfo>
+<ds:SignatureValue Id="xmldsig-eaf1538c-62ba-4ce6-ab3f-7774f1aea15b-sigvalue">
+GMlDDsyFEmlIYTOlUNX5g6oVlf2e34XVCcspqSowDzw0Kz50cWuqt12ZdogWU+fWceO4ovxweVIF&#13;
+75PTp6RHvrKKjiO/7JEneuDA6OsUeE22TVy2UjewbtMggBQDhEVLdty/yzK/QbeRFMsj04OXFd8l&#13;
+qfg6F8frZ29U9Ib4/zm5iD8uHVHac5z7HxU7c6I60hIp3ONjCW7js7neiTlZsWajoL10mGDV0SLJ&#13;
+mKWLvgIXvH4JXVJGaTwNCGHQCiB+dcQwSN3nyo+ZTv7QAggpAYxr3nwXHU5OD46cTVrqKcG169HK&#13;
++nyMptab/cn1Bw5SeWn++/UiM/nWXHpXi0LOGQ==
+</ds:SignatureValue>
+<ds:KeyInfo>
+<ds:X509Data>
+<ds:X509Certificate>
+MIIFYDCCA0igAwIBAgIIGfCy1S1h48wwDQYJKoZIhvcNAQENBQAwVDEbMBkGA1UEAwwSQ0MgUDEg&#13;
+U3ViQ0EgUG9kcGlzMRgwFgYDVQQLDA9QMSBJbnRlZ3JhY3lqbmUxDjAMBgNVBAoMBUNTSU9aMQsw&#13;
+CQYDVQQGEwJQTDAeFw0yMTA1MTIwOTQ0NDdaFw0yMzA1MTIwOTQ0NDdaMGwxFjAUBgNVBAMMDUph&#13;
+biBMZWN6bmljenkxGzAZBgNVBAUTElBFU0VMOiA2NDAzMDcwMTY2MTEYMBYGA1UECwwPUDEgSW50&#13;
+ZWdyYWN5am5lMQ4wDAYDVQQKDAVDU0lPWjELMAkGA1UEBhMCUEwwggEiMA0GCSqGSIb3DQEBAQUA&#13;
+A4IBDwAwggEKAoIBAQCHrMrIJWmVPvUS7N4SnjNMPvnuzEY92o4HmINre62YSD2Oi2DiyYcto6NU&#13;
+qx4BUIjz+IRXLK3+yeFfLul+OWbner17Uqi8x0GWMbQVLAJPmMPgCyy6EkZ8EZ9x7DE7KVSoBEW2&#13;
+pPBtk8cS43bvbt9h+8Px4bX5xkwC913bU4z3h58jjHkIpPYXg9qQgtVFORtcfPoXEOMWAVnH4P8V&#13;
+KS5WKb7/EAl8ie3/fQvGSPHeldxx92rn7teLLU/yDLtfQGpS/xDyEF4wR4VchfGU5nzMjy9ROpdz&#13;
+Zgw1AOF6Qm7YkFJgXWw8YAEzKjCYtnx3kB891AysdJC3v4ty54wUdOI1AgMBAAGjggEcMIIBGDAM&#13;
+BgNVHRMBAf8EAjAAMB8GA1UdIwQYMBaAFJJEyVS7ukPUDw+r+Ou4Oes7jQYKMF4GA1UdJQRXMFUG&#13;
+CCsGAQUFBwMCBggrBgEFBQcDBAYHKwYBBQIDBAYHKwYBBQIDBQYKKwYBBAGCNwoDDAYKKwYBBAGC&#13;
+NwoDBAYKKwYBBAGCNxQCAgYJKoZIhvcvAQEFMFgGA1UdHwRRME8wTaBLoEmGR2h0dHBzOi8vaW50&#13;
+LXAxLmV6ZHJvd2llLmdvdi5wbC9jY3AxL2NybC9DQ1AxSW50ZWdyYWN5am5lU3ViQ0FQb2RwaXMu&#13;
+Y3JsMB0GA1UdDgQWBBSwfRevgKH7XSvqO0ZTUxxXOCcD7jAOBgNVHQ8BAf8EBAMCAuQwDQYJKoZI&#13;
+hvcNAQENBQADggIBAAEkKSf1xXth62FEOdOe739j4nWBzzUeYAmhd3479uIKZpan5ry4T21RwMM2&#13;
+SUEs+xlGS1beUwBKuPRer/BXG+TxghnClnlTPnQI7ZI/rF0KwoCG81Fyxal7jRkSh93b9GPdPUve&#13;
+qq5s8F1E1y+VzsLyOhUCe6sH7RibFzDaerkh82TiyZKBSuyPfdPjzLdJHtYQJimaFngwzyFBBRJd&#13;
+PC1iPhy6GEYfN6SIPXwaQYx8fiq2kb/asZC2+HuWrsDqsGvm+vUbir/4Dyjt/frZAIyLpYdfg5pR&#13;
+LwNx7dlGQSl70gRmJ5ofq5ELWmMiNxKBWrYt5AUMICtLw22Z4hLnNFqDG4QUhcJlswZ//0IAmk5n&#13;
+q2GJDOL0Iet0qjZbnga9tBUeeJe7J84dswZKtbdVQ+xDSelfRi9Duf2V/oU6LTGUFsMmY1JGvfBV&#13;
+l1+0NLR4Mf8B1fFe2aDtCaOvz75ewG8kePt9F/USP9ge3wJ+NcYr0yjjeUdlp+e5ZFJx3erCBKLX&#13;
+SkLrlJ9nHTuKKm6/d4WPbwlH1oEQ5R5GXp+8y3b/x7XGHjLZpa9u5oWMZSZpA4dLIw6f3s5KyKLS&#13;
++jx6MwZ9X4rqoGWHlHaQ1sUNI2uYuXdIxGiLv6iB9zouTgARaQZdTrpio8Wq3/hu74RrX/AUukcq&#13;
+wlluHGUeX4jw7gXM
+</ds:X509Certificate>
+<ds:X509SubjectName>C=PL, O=CSIOZ, OU=P1 Integracyjne, OID.2.5.4.5=PESEL: 64030701661, CN=Jan Leczniczy</ds:X509SubjectName>
+<ds:X509IssuerSerial>
+<ds:X509IssuerName>C=PL,O=CSIOZ,OU=P1 Integracyjne,CN=CC P1 SubCA Podpis</ds:X509IssuerName>
+<ds:X509SerialNumber>1869190474017924044</ds:X509SerialNumber>
+</ds:X509IssuerSerial>
+</ds:X509Data>
+</ds:KeyInfo>
+<ds:Object><xades:QualifyingProperties xmlns:xades="http://uri.etsi.org/01903/v1.3.2#" xmlns:xades141="http://uri.etsi.org/01903/v1.4.1#" Target="#xmldsig-eaf1538c-62ba-4ce6-ab3f-7774f1aea15b"><xades:SignedProperties Id="xmldsig-eaf1538c-62ba-4ce6-ab3f-7774f1aea15b-signedprops"><xades:SignedSignatureProperties><xades:SigningTime>2022-12-13T22:44:56.074+01:00</xades:SigningTime><xades:SigningCertificate><xades:Cert><xades:CertDigest><ds:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/><ds:DigestValue>P6yv5shHameUXUvlczXw+Pw9cqw=</ds:DigestValue></xades:CertDigest><xades:IssuerSerial><ds:X509IssuerName>C=PL,O=CSIOZ,OU=P1 Integracyjne,CN=CC P1 SubCA Podpis</ds:X509IssuerName><ds:X509SerialNumber>1869190474017924044</ds:X509SerialNumber></xades:IssuerSerial></xades:Cert><xades:Cert><xades:CertDigest><ds:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/><ds:DigestValue>NlQUhRTpKSOI3gtLuGkBaQiNqmc=</ds:DigestValue></xades:CertDigest><xades:IssuerSerial><ds:X509IssuerName>C=PL,O=CSIOZ,OU=P1 Integracyjne,CN=CC P1 RootCA</ds:X509IssuerName><ds:X509SerialNumber>2054687354297930354</ds:X509SerialNumber></xades:IssuerSerial></xades:Cert><xades:Cert><xades:CertDigest><ds:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/><ds:DigestValue>UFPuuU3hpB13BUK2GrMY/O45pVM=</ds:DigestValue></xades:CertDigest><xades:IssuerSerial><ds:X509IssuerName>C=PL,O=CSIOZ,OU=P1 Integracyjne,CN=CC P1 RootCA</ds:X509IssuerName><ds:X509SerialNumber>7581879720630660226</ds:X509SerialNumber></xades:IssuerSerial></xades:Cert></xades:SigningCertificate></xades:SignedSignatureProperties></xades:SignedProperties></xades:QualifyingProperties></ds:Object>
+</ds:Signature></ClinicalDocument>
